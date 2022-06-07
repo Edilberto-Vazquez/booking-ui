@@ -1,12 +1,15 @@
 import React from 'react';
 import './Card.css';
+import NextLink from 'next/link';
 
 const CardComponent = (props) => {
   const { subtitle, title, description, rating, price, reviews, image } = props
   return (
     <div className='wrap-card'>
       <div className='wrap-slider'>
-        <div className='slider-arrow__right'></div>
+        <NextLink href="/places/details">
+          <button type='button' className='slider-arrow__right' />
+        </NextLink>
         <img src={image} alt='' />
       </div>
       <div className='card-content'>

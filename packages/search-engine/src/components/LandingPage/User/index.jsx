@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useState } from 'react';
 import './User.css';
+import NextLink from 'next/link';
 
 const optionsNoAuthenticated = ['Regístrate', 'Iniciar sesión'];
 const optionsAuthenticated = [
@@ -42,9 +43,11 @@ const User = ({ classUser = 'users_container' }) => {
 
   return (
     <div className={classUser}>
-      <div className="link host">
-        <a href="/">Hazte anfitrión</a>
-      </div>
+      <NextLink href="/become-a-host/property-type" className="link host">
+        <div className="link host">
+          <a href="/">Hazte anfitrión</a>
+        </div>
+      </NextLink>
 
       <button
         className={`user ${isAuthenticated && 'userAuthenticated'}`}
